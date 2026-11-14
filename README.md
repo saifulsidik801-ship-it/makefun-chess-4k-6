@@ -1,6 +1,6 @@
 # tiny-chess-01 candidate #6
 
-Bitboard engine, `main.py` 3,967 bytes (cap 4,096). Built on candidate #5
+Bitboard engine, `main.py` 4,094 bytes (cap 4,096). Built on candidate #5
 (3.0/8, Elo 1,253, tied with #2); target: BEAT submitted #2 (3.0/8, Elo 1,253).
 
 ## Changes vs #5
@@ -35,6 +35,11 @@ clock — replay stays deterministic), packer NUL-as-`\x00` fix, driver
   nodes-250k (61, threefold), G6 L vs nodes-500k (89), G7 L vs
   nodes-1M (64), G8 W vs nodes-2M (200, adjudicated, rook vs bare king).
   Max think 3,177 ms, no time losses. Scores in `trial-c6b/scores/`.
+- trial-c6e (v3 transform, BG=100,000): **5W-1D-2L = 5.5/8, Elo 1,598.
+  BEAT #2.** Identical result to trial-c6b/c6d (checkmate 6, threefold 1,
+  adjudicated 1; spare_plies 462). Source was rewritten with shorter
+  identifiers to fit the 4,096-byte cap; behaviour verified identical
+  on 10 positions (parse/eval/gen/make/full move ordering).
 
 ## Tests
 
